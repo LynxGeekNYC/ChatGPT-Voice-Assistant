@@ -85,10 +85,11 @@ std::string QueryChatGPT(const std::string& query) {
         curl_easy_setopt(curl, CURLOPT_URL, "https://api.openai.com/v1/completions");
         curl_easy_setopt(curl, CURLOPT_POST, 1L);
 
+        // This variable controls the JSON data that is sent and received from OpenAI. Default is 100 tokens but if your script requires more token usage, change it here. 
         std::string jsonData = R"({
             "model": "text-davinci-003",
             "prompt": ")" + query + R"(",
-            "max_tokens": 100
+            "max_tokens": 100 
         })";
 
         struct curl_slist* headers = NULL;
