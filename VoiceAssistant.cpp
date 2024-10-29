@@ -167,6 +167,8 @@ std::string GetGoogleTTS(const std::string& text) {
     return "response.wav";
 }
 
+// Commands you can incorporate into the system
+
 void ExecuteCommand(const std::string& command) {
     if (command == "open notepad") {
         system("start notepad");
